@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InformationFragment">
+
+
+    <FrameLayout
+        android:id="@+id/frameLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#153A1E"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_marginLeft="23.5dp"
+            android:layout_marginTop="5.5dp"
+            android:layout_marginRight="9.5dp"
+            android:layout_marginBottom="5.5dp"
+            app:srcCompat="@drawable/maria_logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="29dp"
+            android:layout_marginBottom="23dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="EMERGENCY NETWORK"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|right"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="85dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="MARIA"
+            android:textColor="#E1C71C"
+            android:textSize="30sp" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/yellow_widebox"
+        android:fontFamily="@font/poppins_bold"
+        android:padding="8dp"
+        android:text="All fields are optional"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout3" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="0dp"
+        android:background="#C6C9D9">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name/Nickname"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="20sp"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:id="@+id/editTextName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_box"
+                android:inputType="text"
+                android:layout_marginTop="4dp"
+                android:padding="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phone Number"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="10dp"/>
+
+            <EditText
+                android:id="@+id/editTextPhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/input_box"
+                android:inputType="number"
+                android:padding="8dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@drawable/line"
+                android:layout_marginTop="27dp"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="What is your emergency?"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="20sp"
+                android:textColor="@color/black"/>
+
+            <androidx.gridlayout.widget.GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:rowCount="3"
+                app:columnCount="2"
+                android:layout_marginTop="21dp"
+                android:layout_marginBottom="25dp">
+
+                <CheckBox
+                    android:id="@+id/checkBoxMedical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="fill"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="20sp"
+                    android:buttonTint="@color/white"
+                    android:text="Medical"/>
+                <CheckBox
+                    android:id="@+id/checkBoxFire"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="fill"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="20sp"
+                    android:buttonTint="@color/white"
+                    android:text="Fire/Explosion"/>
+                <CheckBox
+                    android:id="@+id/checkBoxLandSlide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="fill"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="20sp"
+                    android:buttonTint="@color/white"
+                    android:text="Landslide"/>
+                <CheckBox
+                    android:id="@+id/checkBoxViolence"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="fill"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="20sp"
+                    android:buttonTint="@color/white"
+                    android:text="Violence"/>
+                <CheckBox
+                    android:id="@+id/checkBoxTrapped"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="fill"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="20sp"
+                    android:buttonTint="@color/white"
+                    android:text="Trapped"/>
+                <CheckBox
+                    android:id="@+id/checkBoxLost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="20sp"
+                    android:gravity="fill"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1"
+                    android:buttonTint="@color/white"
+                    android:text="Lost"/>
+
+            </androidx.gridlayout.widget.GridLayout>
+
+            <EditText
+                android:id="@+id/editTexttextOthersEmergency"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_box"
+                android:inputType="text"
+                android:layout_marginTop="4dp"
+                android:hint="Others"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@drawable/line"
+                android:layout_marginTop="27dp"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="What do you need in the next
+                24 hours?"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="20sp"
+                android:textColor="@color/black"/>
+            <androidx.gridlayout.widget.GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:rowCount="2"
+                app:columnCount="2"
+                android:layout_marginTop="21dp"
+                android:layout_marginBottom="25dp">
+
+                <CheckBox
+                    android:id="@+id/checkBoxFirstAid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="fill"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="20sp"
+                    android:buttonTint="@color/white"
+                    android:text="First Aid"/>
+                <CheckBox
+                    android:id="@+id/checkBoxShelter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="fill"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="20sp"
+                    android:buttonTint="@color/white"
+                    android:text="Shelter"/>
+                <CheckBox
+                    android:id="@+id/checkBoxFoodWater"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="fill"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="20sp"
+                    android:buttonTint="@color/white"
+                    android:text="Food/Water"/>
+                <CheckBox
+                    android:id="@+id/checkBoxRescue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="fill"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="20sp"
+                    android:buttonTint="@color/white"
+                    android:text="Rescue"/>
+
+
+            </androidx.gridlayout.widget.GridLayout>
+
+            <EditText
+                android:id="@+id/editTexttextOthersNeeds"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_box"
+                android:inputType="text"
+                android:layout_marginTop="4dp"
+                android:hint="Others"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@drawable/line"
+                android:layout_marginTop="27dp"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="What dangers are right around you?"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="20sp"
+                android:textColor="@color/black"/>
+            <androidx.gridlayout.widget.GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:rowCount="3"
+                app:columnCount="2"
+                android:layout_marginTop="21dp"
+                android:layout_marginBottom="25dp">
+
+                <CheckBox
+                    android:id="@+id/checkBoxBlockedTrail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="fill"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="20sp"
+                    android:buttonTint="@color/white"
+                    android:text="Trail Blocked"/>
+                <CheckBox
+                    android:id="@+id/checkBoxExplosives"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="fill"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="20sp"
+                    android:buttonTint="@color/white"
+                    android:text="Explosives"/>
+                <CheckBox
+                    android:id="@+id/checkBoxFireSmoke"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="fill"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="20sp"
+                    android:buttonTint="@color/white"
+                    android:text="Smoke/Fire"/>
+                <CheckBox
+                    android:id="@+id/checkBoxWildAnimals"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="fill"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="20sp"
+                    android:buttonTint="@color/white"
+                    android:text="Wild Animals"/>
+                <CheckBox
+                    android:id="@+id/checkBoxFallenTrees"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="fill"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="20sp"
+                    android:buttonTint="@color/white"
+                    android:text="Fallen Trees"/>
+                <CheckBox
+                    android:id="@+id/checkBoxChemicals"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="20sp"
+                    android:gravity="fill"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1"
+                    android:buttonTint="@color/white"
+                    android:text="Chemicals"/>
+
+            </androidx.gridlayout.widget.GridLayout>
+
+            <EditText
+                android:id="@+id/editTextOthersDangers"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_box"
+                android:inputType="text"
+                android:layout_marginTop="4dp"
+                android:hint="Others"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@drawable/line"
+                android:layout_marginTop="27dp"
+                android:layout_marginBottom="16dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="How many people?"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"/>
+
+                <EditText
+                    android:id="@+id/editTextNumberOfPeople"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:layout_weight=".2"
+                    android:background="@drawable/input_box"
+                    android:inputType="number"
+                    android:padding="8dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@drawable/line"
+                android:layout_marginTop="27dp"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:id="@+id/textViewImmobile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Are you or anyone in your group
+                immobile?"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/white"
+                android:layout_marginTop="4dp"
+                android:id="@+id/checkBoxImmobile"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@drawable/line"
+                android:layout_marginTop="27dp"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Message"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="20sp"
+                android:textColor="@color/black"/>
+            <EditText
+                android:id="@+id/editTexttextMessage"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_box"
+                android:inputType="textMultiLine"
+                android:lines="4"
+                android:layout_marginTop="4dp"
+                android:hint="More information about your situation.
+                (100 Characters)"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@drawable/line"
+                android:layout_marginTop="27dp"
+                android:layout_marginBottom="16dp"/>
+
+            <Button
+                android:id="@+id/buttonSendSOS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="70dp"
+                android:background="@drawable/yellow_box"
+                android:fontFamily="@font/inter_bold"
+                android:text="SEND SOS"
+                android:textSize="36sp"/>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
