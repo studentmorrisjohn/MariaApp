@@ -60,6 +60,15 @@ class LandingFragment : Fragment(), LocationListener {
             findNavController().navigate(R.id.action_landingFragment_to_sendSosFragment)
         }
 
+        binding.buttonToLoraTest.setOnClickListener {
+            findNavController().navigate(R.id.sendLoraRssiFragment)
+        }
+
+        binding.buttonToWifiTest.setOnClickListener {
+            findNavController().navigate(R.id.sendPhoneRssiFragment)
+        }
+
+
     }
     override fun onDestroyView() {
         super.onDestroyView()

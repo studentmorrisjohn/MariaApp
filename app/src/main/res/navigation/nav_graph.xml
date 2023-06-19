@@ -33,6 +33,12 @@
         <action
             android:id="@+id/action_landingFragment_to_sendSosFragment"
             app:destination="@id/sendSosFragment" />
+        <action
+            android:id="@+id/action_landingFragment_to_sendPhoneRssiFragment"
+            app:destination="@id/sendPhoneRssiFragment" />
+        <action
+            android:id="@+id/action_landingFragment_to_sendLoraRssiFragment"
+            app:destination="@id/sendLoraRssiFragment" />
     </fragment>
     <fragment
         android:id="@+id/sendSosFragment"
@@ -64,4 +70,14 @@
             android:id="@+id/action_updateFragment_to_informationFragment"
             app:destination="@id/informationFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/sendLoraRssiFragment"
+        android:name="com.example.mariaapp.SendLoraRssiFragment"
+        android:label="fragment_send_lora_rssi"
+        tools:layout="@layout/fragment_send_lora_rssi" />
+    <fragment
+        android:id="@+id/sendPhoneRssiFragment"
+        android:name="com.example.mariaapp.SendPhoneRssiFragment"
+        android:label="fragment_send_phone_rssi"
+        tools:layout="@layout/fragment_send_phone_rssi" />
 </navigation>
