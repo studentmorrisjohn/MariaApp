@@ -21,6 +21,7 @@ import okhttp3.Callback
 import okhttp3.FormBody
 import okhttp3.Request
 import okhttp3.Response
+import okhttp3.ResponseBody
 import java.io.IOException
 
 class SendSosFragment : Fragment(), LocationListener {
@@ -120,6 +121,7 @@ class SendSosFragment : Fragment(), LocationListener {
             .add("clientId", id.toString())
             .add("longitude", longitudeText)
             .add("latitude", latitudeText)
+            .add("isSafe", "0")
             .build()
         val request = Request.Builder()
             .url("$BASE_URL/sendLocation")
@@ -132,14 +134,22 @@ class SendSosFragment : Fragment(), LocationListener {
             }
 
             override fun onResponse(call: Call, response: Response) {
+                val responseBody: ResponseBody? = response.body
+                val bodyString = responseBody?.string()
+
                 response.use {
 
 
                     activity?.runOnUiThread {
                         if (response.isSuccessful) {
+
                             println("sent")
+                            println(bodyString)
+
                             // Perform navigation when the response is successful
-                            goToUpdateFragment()
+                            if (bodyString != null) {
+                                goToUpdateFragment(bodyString)
+                            }
                         } else {
                             // Handle unsuccessful response
                         }
@@ -149,8 +159,9 @@ class SendSosFragment : Fragment(), LocationListener {
         })
     }
 
-    private fun goToUpdateFragment() {
-        findNavController().navigate(R.id.action_sendSosFragment_to_updateFragment)
+    private fun goToUpdateFragment(messageID: String) {
+        val action = SendSosFragmentDirections.actionSendSosFragmentToUpdateFragment(messageID)
+        findNavController().navigate(action)
     }
 
     fun retryRequest() {

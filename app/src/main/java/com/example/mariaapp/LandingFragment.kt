@@ -46,6 +46,8 @@ class LandingFragment : Fragment(), LocationListener {
         testConnection()
 
         binding.sosbutton.visibility = View.INVISIBLE
+        binding.buttonToLoraTest.visibility = View.GONE
+        binding.buttonToWifiTest.visibility = View.GONE
 
         binding.sosbutton.setOnClickListener {
             // Generate and store ID if needed

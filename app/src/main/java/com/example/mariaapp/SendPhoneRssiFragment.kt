@@ -94,6 +94,8 @@ class SendPhoneRssiFragment : Fragment(), LocationListener {
 
         val coordinateText = "$latitude,$longitude"
 
+        binding.textViewCoordinatesPhone.text = coordinateText
+
         println(coordinateText)
     }
 

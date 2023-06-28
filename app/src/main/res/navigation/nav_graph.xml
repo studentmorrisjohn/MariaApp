@@ -69,6 +69,12 @@
         <action
             android:id="@+id/action_updateFragment_to_informationFragment"
             app:destination="@id/informationFragment" />
+        <action
+            android:id="@+id/action_updateFragment_to_landingFragment"
+            app:destination="@id/landingFragment" />
+        <argument
+            android:name="messageID"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/sendLoraRssiFragment"

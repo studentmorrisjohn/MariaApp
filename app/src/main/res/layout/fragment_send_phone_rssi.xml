@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SendPhoneRssiFragment" >
+    tools:context=".SendPhoneRssiFragment">
 
     <Button
         android:id="@+id/buttonSendRSSI"
@@ -22,8 +22,8 @@
         android:layout_height="wrap_content"
         android:text="Input RSSI Value of WIFI"
         app:layout_constraintBottom_toTopOf="@+id/editTextRSSI"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="130dp" />
 
     <EditText
         android:id="@+id/editTextRSSI"
@@ -48,4 +48,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextRSSI" />
+
+    <TextView
+        android:id="@+id/textViewCoordinatesPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GPS Coordinates: "
+        app:layout_constraintBottom_toTopOf="@+id/editTextRSSI"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

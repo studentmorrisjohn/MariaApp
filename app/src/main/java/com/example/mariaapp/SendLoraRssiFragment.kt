@@ -93,6 +93,8 @@ class SendLoraRssiFragment : Fragment(), LocationListener {
 
         val coordinateText = "$latitude,$longitude"
 
+        binding.textViewCoordinates.text = coordinateText
+
         println(coordinateText)
     }
 

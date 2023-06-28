@@ -15,6 +15,7 @@ import okhttp3.Callback
 import okhttp3.FormBody
 import okhttp3.Request
 import okhttp3.Response
+import okhttp3.ResponseBody
 import java.io.IOException
 
 
@@ -44,7 +45,7 @@ class InformationFragment : Fragment(), LocationListener{
         activity.registerLocationListener(this)
 
         binding.buttonSendSOS.setOnClickListener {
-            sendForm()
+            sendCoordinates()
         }
     }
 
@@ -110,6 +111,7 @@ class InformationFragment : Fragment(), LocationListener{
             .add("clientId", id.toString())
             .add("longitude", longitudeText)
             .add("latitude", latitudeText)
+            .add("isSafe", "0")
             .build()
         val request = Request.Builder()
             .url("$BASE_URL/sendLocation")
@@ -128,7 +130,7 @@ class InformationFragment : Fragment(), LocationListener{
                     activity?.runOnUiThread {
                         if (response.isSuccessful) {
                             // Perform navigation when the response is successful
-                            goToUpdateFragment()
+                            sendForm()
                         } else {
                             // Handle unsuccessful response
                         }
@@ -154,13 +156,18 @@ class InformationFragment : Fragment(), LocationListener{
             }
 
             override fun onResponse(call: Call, response: Response) {
+                val responseBody: ResponseBody? = response.body
+                val bodyString = responseBody?.string()
+
                 response.use {
 
 
                     activity?.runOnUiThread {
                         if (response.isSuccessful) {
                             // Perform navigation when the response is successful
-                            goToUpdateFragment()
+                            if (bodyString != null) {
+                                goToUpdateFragment(bodyString)
+                            }
                         } else {
                             // Handle unsuccessful response
                         }
@@ -243,8 +250,9 @@ class InformationFragment : Fragment(), LocationListener{
         return "0"
     }
 
-    private fun goToUpdateFragment() {
-        findNavController().navigate(R.id.action_informationFragment_to_updateFragment)
+    private fun goToUpdateFragment(messageID: String) {
+        val action = InformationFragmentDirections.actionInformationFragmentToUpdateFragment(messageID)
+        findNavController().navigate(action)
     }
 
 
